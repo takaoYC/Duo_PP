@@ -1,0 +1,291 @@
+@font-face{font-family:Editorial;src:local("Cormorant Garamond"),local("Baskerville");font-display:swap}
+:root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;color:#e9e6f0;background:#060509;font-synthesis:none;--muted:#a59bac;--lavender:#b9a8dd;--line:#b9a8dd29;--serif:Editorial,"Baskerville","Times New Roman",serif;--chinese:"Songti TC","Noto Serif TC","PMingLiU",serif;--phone-width:min(560px,calc(100vw - 44px));--phone-height:440px}
+*{box-sizing:border-box}body{margin:0;min-width:280px}button,input{font:inherit}button{color:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible,input:focus-visible{outline:2px solid #cbbcde;outline-offset:5px}button{border:0;background:none;min-width:44px;min-height:44px}button:hover{color:#e9defb}button:disabled{cursor:default}img{display:block;max-width:100%;user-select:none;-webkit-user-drag:none}.experience{position:relative;isolation:isolate;min-height:100dvh;overflow:hidden;padding: max(24px,env(safe-area-inset-top)) max(28px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom));background:radial-gradient(ellipse at 65% 43%,#4b38692c,transparent 43%),radial-gradient(ellipse at 100% 65%,#65489e20,transparent 45%)}.experience:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle,#d9cfe680 .7px,transparent 1px),radial-gradient(circle,#b9a8dd50 .6px,transparent 1px);background-size:173px 211px,257px 307px;background-position:41px 89px,113px 24px;mask-image:linear-gradient(transparent,#000 30%,#000 70%,transparent)}.masthead{display:flex;justify-content:space-between;align-items:center;font-family:var(--serif);font-size:12px;letter-spacing:.18em;color:var(--muted);padding-bottom:20px;border-bottom:1px solid var(--line)}.masthead span:first-child{color:#d9cfe6;letter-spacing:.3em}.intro{text-align:center;margin:28px auto 0}.eyebrow{font-size:10px;letter-spacing:.26em;color:var(--muted);margin:0 0 8px}h1{position:relative;display:inline-block;font-family:var(--serif);font-weight:400;font-size:64px;letter-spacing:-.04em;line-height:1;margin:0}h1 em{font-weight:400;color:#c8b9dc}.title-star{position:absolute;font-size:20px;right:-28px;top:4px;color:#b9a8dd}.subtitle{font-family:var(--chinese);font-size:14px;letter-spacing:.18em;color:#b4a8c1;margin:13px 0 0}.device-stage{position:relative;height:500px;display:grid;place-items:center;perspective:1400px;perspective-origin:50% 43%;margin:0 auto;max-width:1100px}.ambient-orbit{position:absolute;width:650px;height:170px;border:1px solid #b9a8dd0c;border-radius:50%;transform:rotate(-18deg);pointer-events:none}.device-shadow{position:absolute;width:var(--phone-width);height:35px;bottom:12px;border-radius:50%;background:#000;filter:blur(17px);pointer-events:none}.phone{position:relative;width:var(--phone-width);height:var(--phone-height);transform-style:preserve-3d;transform:translateX(var(--phone-offset)) rotateX(3deg) rotateY(var(--phone-rotation)) scale(var(--closed-zoom));touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;will-change:transform}.phone.dragging{cursor:grabbing}.half{position:absolute;top:0;width:50%;height:100%;transform-style:preserve-3d}.half-left{left:0;transform:translateZ(0)}.half-right{left:50%;transform-origin:left center;transform:rotateY(var(--fold-angle))}.face{position:absolute;inset:0;border-radius:28px;border:1px solid #817986;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;background:#0c0b0f;box-shadow:inset 0 0 0 3px #2a282c,inset 0 0 0 5px #08080a}.inside{transform:translateZ(5px);background:radial-gradient(ellipse at 80% 30%,#30233f,#0b0a0f 80%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:#9685a7}.inside:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,#ffffff08,transparent 40%,rgba(0,0,0,var(--fold-shade)));pointer-events:none}.inside-left{border-top-right-radius:9px;border-bottom-right-radius:9px}.inside-right{border-top-left-radius:9px;border-bottom-left-radius:9px}.inside img{width:90%;opacity:.55}.inner-year{font-family:var(--serif);font-size:48px;letter-spacing:.1em}.inside p{font-family:var(--chinese);font-size:13px;text-align:center;line-height:2;letter-spacing:.2em}.back,.cover{transform:rotateY(180deg) translateZ(5px);background:linear-gradient(115deg,#29282d,#121216 30%,#0d0d10 65%,#252329);border-color:#625c68}.back:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(125deg,#dad2e409,transparent 40%,#b8a4d20a 80%)}.back-inlay{position:absolute;width:82%;left:9%;top:32%;filter:contrast(.85) brightness(1.5);opacity:.65}.back-inlay:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 35%,#d3c4e20b 48%,transparent 62%);mix-blend-mode:screen}.back-date{position:absolute;bottom:36px;left:0;right:0;text-align:center;color:#8e819b;font-size:9px;letter-spacing:.24em}.edge{position:absolute;width:10px;height:calc(100% - 42px);top:21px;background:linear-gradient(90deg,#101014,#6d6470,#18171d);transform:rotateY(90deg);backface-visibility:visible}.half-left .edge{left:-5px}.half-right .edge{right:-5px}.hinge{position:absolute;left:calc(50% - 4px);top:6px;height:calc(100% - 12px);width:8px;border-radius:7px;background:linear-gradient(90deg,#09090b,#827388 45%,#1a181e 75%,#08070a);transform:translateZ(1px);box-shadow:0 0 3px #000}.lock-screen{position:absolute;inset:7px;border-radius:21px;overflow:hidden;display:flex;align-items:center;flex-direction:column;background:radial-gradient(ellipse at 105% 53%,#65489e55,transparent 70%),#060509}.lock-screen:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,#d8caec99 .7px,transparent 1px);background-size:47px 71px;opacity:.5}.lock-screen:after{content:"";position:absolute;inset:0;background:linear-gradient(125deg,#fff0 25%,#cdbfe708 47%,#fff0 65%);pointer-events:none}.lock-year{font-family:var(--serif);font-size:clamp(57px,8vw,100px);line-height:1.1;font-weight:400;letter-spacing:-.06em;color:#eee8f5;z-index:1;margin-top:6px}.lock-art{position:absolute;width:125%;height:55%;top:28%;left:-14%;display:grid;place-items:center}.lock-art img{width:100%;height:100%;object-fit:contain;object-position:50% 50%;filter:brightness(1.4)}.lock-brand{position:absolute;bottom:72px;text-align:center;font-family:var(--serif);font-size:21px;letter-spacing:.25em;color:#d9cfe6}.lock-brand>span{display:block;font-size:8px;letter-spacing:.17em;margin-top:8px}.lock-cue{position:absolute;bottom:22px;font-family:var(--chinese);font-size:10px;letter-spacing:.18em;color:#aa9bbb}.lock-cue>span{display:block;text-align:center;font-family:sans-serif;font-size:14px;line-height:1.1;margin-top:5px}.message-screen{position:absolute;inset:11px;transform:translateZ(13px);backface-visibility:hidden;-webkit-backface-visibility:hidden;opacity:var(--message-opacity);pointer-events:none;display:flex;border-radius:20px;overflow:hidden}.phone.readable .message-screen{pointer-events:auto;cursor:ew-resize}.message-card{--paper:#e9e2d5;--ink:#352e3a;--paper-muted:#786c7f;--card-font-scale:1;position:relative;width:100%;margin:0;padding:30px 38px 24px;display:flex;flex-direction:column;color:var(--ink);background:radial-gradient(ellipse at 90% 0%,#c2b0c327,transparent 55%),var(--paper);box-shadow:inset 0 0 0 7px #00000004,inset 0 0 30px #71607410;transition:background-color .4s,color .4s}.message-card:after{content:"";position:absolute;inset:12px;border:1px solid #8d798326;pointer-events:none}.message-card[data-theme=dark]{--paper:#242128;--ink:#e6dfeb;--paper-muted:#b7a8bf}.message-card[data-font=small]{--card-font-scale:.88}.message-card[data-font=large]{--card-font-scale:1.16}.paper-heading,.paper-foot{display:flex;justify-content:space-between;color:var(--paper-muted);font-family:var(--serif);font-size:9px;letter-spacing:.15em;flex-shrink:0}.paper-heading{padding-bottom:17px;border-bottom:1px solid #8d79832e}.paper-heading>span:last-child{font-size:16px;line-height:10px}.paper-foot{margin-top:auto;padding-top:18px;border-top:1px solid #8d79832e;font-size:8px;letter-spacing:.12em}.card-copy{margin:auto 0;padding:20px 0}.card-copy>p:first-child{font-family:var(--chinese);font-weight:500;font-size:calc(21px * var(--card-font-scale));line-height:1.95;letter-spacing:.055em;margin:0;overflow-wrap:anywhere}.signature{font-family:var(--chinese);text-align:right;font-size:15px;margin:20px 0 0;letter-spacing:.12em}.signature>span:first-child{color:var(--paper-muted);margin-right:7px}.interaction-panel{width:min(380px,100%);margin:0 auto}.view-controls{display:flex;align-items:center;justify-content:center;gap:3px;font-size:12px;color:#a59bac;min-height:44px}.view-controls button{font-size:12px;padding:0 8px}.view-controls button[aria-pressed=true]{color:#e6dced}.view-controls>span:not(.drag-hint){opacity:.35}.drag-hint{margin-left:18px;font-size:11px;color:#988aab;letter-spacing:.06em}.fold-control{margin-top:10px}.fold-label{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#b9a8c7;letter-spacing:.12em}.fold-label output{font-family:var(--serif);font-size:13px;font-variant-numeric:tabular-nums;letter-spacing:.02em}input[type=range]{--range-fill:4%;display:block;width:100%;height:38px;margin:2px 0 0;appearance:none;-webkit-appearance:none;background:transparent;cursor:ew-resize;touch-action:none}input[type=range]::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,#b9a8dd var(--range-fill),#b9a8dd30 var(--range-fill));border-radius:2px}input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:20px;height:20px;margin-top:-9px;background:#c9b9df;border:5px solid #211b2b;border-radius:50%;box-shadow:0 0 0 1px #8e79a7,0 0 16px #b9a8dd16}input[type=range]::-moz-range-track{height:2px;background:#b9a8dd30}input[type=range]::-moz-range-progress{height:2px;background:#b9a8dd}input[type=range]::-moz-range-thumb{width:12px;height:12px;background:#c9b9df;border:4px solid #211b2b;border-radius:50%}.fold-endpoints{display:flex;justify-content:space-between;font-family:var(--serif);color:#c4b5d5;font-size:14px;letter-spacing:.08em}.fold-endpoints i{font-family:var(--chinese);font-style:normal;font-size:10px;color:#9687a6;margin-left:7px}.reader-controls{opacity:0;visibility:hidden;transition:opacity .4s;min-height:110px;margin-top:10px}.reader-controls.available{opacity:1;visibility:visible}.card-navigation{display:flex;align-items:center;justify-content:center;gap:25px}.card-navigation button{font-size:23px;color:#c3b2d5}.card-count{font-family:var(--serif);font-size:15px;min-width:56px;text-align:center;letter-spacing:.1em}.card-count i{font-style:normal;color:#9d90aa}.reader-settings{display:flex;align-items:center;justify-content:center;gap:12px}.segmented{display:flex;gap:1px}.segmented button{font-size:12px;color:#ad9dbb;border-radius:5px;padding:0 10px}.segmented button[aria-pressed=true]{background:#b9a8dd13;color:#eee5f6}.font-controls button{padding:0 7px}.control-divider{height:14px;width:1px;background:var(--line)}.closing-line{font-family:var(--chinese);font-size:11px;color:#998ba8;letter-spacing:.2em;text-align:center;margin:7px 0 0}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1100px) and (min-height:850px){.intro{margin-top:38px}.device-stage{height:530px}:root{--phone-height:460px}}
+@media(max-width:600px){:root{--phone-height:350px;--phone-width:calc(100vw - 36px)}.experience{padding: max(16px,env(safe-area-inset-top)) 18px max(20px,env(safe-area-inset-bottom))}.masthead{font-size:9px;letter-spacing:.12em;padding-bottom:16px}.intro{margin-top:24px}.eyebrow{font-size:9px}h1{font-size:52px}.subtitle{font-size:12px;margin-top:10px}.device-stage{height:412px;perspective:1050px}.phone{transform:translateX(var(--phone-offset)) rotateX(2deg) rotateY(var(--phone-rotation)) scale(var(--closed-zoom))}.face{border-radius:22px}.inside-left{border-top-right-radius:7px;border-bottom-right-radius:7px}.inside-right{border-top-left-radius:7px;border-bottom-left-radius:7px}.lock-screen{inset:6px;border-radius:16px}.lock-year{font-size:clamp(57px,17vw,76px);margin-top:9px}.lock-art{width:135%;left:-19%;top:30%;height:47%}.lock-brand{font-size:15px;letter-spacing:.19em;bottom:61px}.lock-brand>span{font-size:6px;letter-spacing:.1em}.lock-cue{font-size:8px;bottom:18px}.message-screen{inset:8px;border-radius:15px}.message-card{padding:23px 22px 20px}.message-card:after{inset:8px}.paper-heading{font-size:7px;letter-spacing:.11em;padding-bottom:12px}.paper-foot{font-size:6px;letter-spacing:.04em;padding-top:12px}.card-copy{padding:13px 0}.card-copy>p:first-child{font-size:calc(16px * var(--card-font-scale));line-height:1.8;letter-spacing:.015em}.signature{font-size:13px;margin-top:15px}.interaction-panel{max-width:340px}.view-controls{gap:0}.drag-hint{font-size:10px;margin-left:14px}.fold-control{margin-top:9px}.reader-controls{min-height:100px;margin-top:9px}.closing-line{margin-top:3px;font-size:10px}.ambient-orbit{width:420px;height:130px}.back-date{font-size:6px}.inner-year{font-size:32px}.inside p{font-size:10px;letter-spacing:0}}
+@media(max-width:350px){.message-card{padding:20px 18px}.card-copy>p:first-child{font-size:calc(15px * var(--card-font-scale));line-height:1.7;letter-spacing:0}.paper-heading{font-size:6px}.reader-settings{gap:6px}.segmented button{padding:0 7px}.drag-hint{margin-left:6px}.masthead{font-size:8px}}
+@media(max-height:750px) and (min-width:601px){:root{--phone-height:370px;--phone-width:480px}.intro{margin-top:20px}h1{font-size:48px}.device-stage{height:425px}.card-copy>p:first-child{font-size:calc(19px * var(--card-font-scale))}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* The visual centre stays fixed while the object turns, even when folded. */
+.phone{transform-origin:var(--phone-pivot) 50%}
+.message-screen{inset:11px 0;display:block;border-radius:0}
+.message-left{left:11px;border-radius:20px 0 0 20px}
+.message-right{right:11px;border-radius:0 20px 20px 0}
+.message-card{width:calc(var(--phone-width) - 22px);height:100%;flex-shrink:0}
+.message-right .message-card{transform:translateX(-50%)}
+.message-left:after,.message-right:after{content:"";position:absolute;top:0;bottom:0;width:2px;background:#0a080c33;pointer-events:none}
+.message-left:after{right:0}.message-right:after{left:0}
+.back-inlay:after{display:none}
+@media(max-width:600px){.message-screen{top:8px;bottom:8px}.message-left{left:8px;border-radius:15px 0 0 15px}.message-right{right:8px;border-radius:0 15px 15px 0}.message-card{width:calc(var(--phone-width) - 16px)}}
+
+/* A continuous paper surface: no visible fold across the message. */
+.message-left:after,.message-right:after{display:none}
+.message-card[data-dense=true] .card-copy{padding:4px 0}
+.message-card[data-dense=true] .card-copy>p:first-child{line-height:1.65}
+.message-card[data-dense=true] .signature{margin-top:8px}
+.message-card[data-dense=true] .paper-heading{padding-bottom:10px}
+.message-card[data-dense=true] .paper-foot{padding-top:10px}
+@media(max-width:600px){
+ .message-card[data-dense=true] .card-copy{padding:4px 0}
+ .message-card[data-dense=true] .card-copy>p:first-child{line-height:1.55}
+ .message-card[data-dense=true] .signature{margin-top:8px}
+ .message-card[data-dense=true] .paper-heading{padding-bottom:10px}
+ .message-card[data-dense=true] .paper-foot{padding-top:10px}
+}
+
+/* Book-style opening: right body rests in place, left leaf opens outward. */
+.half-left{transform-origin:right center;transform:rotateY(var(--fold-angle))}
+.half-right{transform:translateZ(0)}
+
+/* Full-orbit inspection; the range and card retain their own gestures. */
+.phone{touch-action:none;transform:translateX(var(--phone-offset)) rotateX(var(--phone-tilt)) rotateY(var(--phone-rotation)) scale(var(--closed-zoom))}
+.phone:focus-visible{outline:1px solid #b9a8dd;outline-offset:12px}
+.message-screen{touch-action:pan-y}
+.edge-cap{position:absolute;left:22px;right:22px;height:10px;background:linear-gradient(#16141a,#77707d,#17151b);transform:rotateX(90deg);backface-visibility:visible}
+.edge-top{top:-5px}.edge-bottom{bottom:-5px}
+.lock-year{color:rgba(238,232,245,.57);text-shadow:0 1px 14px #e5d8fa10}
+.lock-art{top:32%;height:40%;width:112%;left:-6%}
+.lock-brand{bottom:59px;font-size:19px}
+@media(max-width:600px){.lock-art{top:34%;height:37%;width:122%;left:-11%}.lock-brand{bottom:53px;font-size:14px}.lock-brand>span{margin-top:6px}.lock-cue{bottom:14px}}
+
+.phone.inspecting .message-screen{touch-action:none;cursor:grab}
+#inspect[aria-pressed=true]{background:#b9a8dd18;border-radius:5px}
+@media(max-width:350px){.drag-hint{font-size:9px;margin-left:2px}}
+
+/* Only actual surfaces receive pointer hits, never the invisible 3D bounding plane. */
+.phone{pointer-events:none}
+.face,.edge,.edge-cap{pointer-events:auto}
+.interaction-panel{position:relative;z-index:2}
+
+.phone:focus-visible{outline:none}
+.device-stage:has(.phone:focus-visible){outline:1px solid #b9a8dd44;outline-offset:-10px;border-radius:24px}
+
+.message-screen{touch-action:none}
+
+.message-flat{inset:11px;border-radius:20px;transform:translateZ(14px);opacity:0;pointer-events:none!important}
+.message-flat .message-card{width:100%;transform:none}
+.phone.flat .message-flat{opacity:1}
+.phone.flat.readable .message-flat{pointer-events:auto!important}
+.phone.flat .message-left,.phone.flat .message-right{opacity:0;pointer-events:none!important}
+@media(max-width:600px){.message-flat{inset:8px;border-radius:15px}}
+
+/* All faces share the same physical outline, including the hidden inner face. */
+.phone{--body-radius:28px}
+.phone .face{border-radius:var(--body-radius)}
+.phone .edge{top:var(--body-radius);height:calc(100% - 2 * var(--body-radius))}
+.phone .edge-cap{left:var(--body-radius);right:var(--body-radius)}
+.phone .hinge{top:var(--body-radius);height:calc(100% - 2 * var(--body-radius))}
+@media(max-width:600px){.phone{--body-radius:22px}}
+
+.card-copy>p:first-child{white-space:pre-line}
+
+@media(max-width:600px){.message-card[data-dense=true] .card-copy>p:first-child{line-height:1.4}}
+
+.message-card[data-dense=true] .card-copy>p:first-child{line-height:1.4}
+
+
+
+/* ---------------------------------------------------------------------------
+   Layout pass: the piece is one screen, so the object sizes itself to the
+   screen. `.experience` is a grid whose stage row absorbs everything the fixed
+   chrome does not need, and the phone takes that leftover height directly --
+   clamped between a legible minimum and its designed maximum -- instead of
+   being pinned to a constant that only fits some laptops.
+   --------------------------------------------------------------------------- */
+:root{--phone-min-width:300px;--phone-max-width:560px;--stage-air:56px}
+.experience{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto 1fr auto auto}
+/* The stage only declares how much room there is. main.ts turns that into a
+   body of the right shape, so --phone-width and --phone-height always agree
+   with each other and with the real device ratio. */
+.device-stage{
+  height:auto;min-height:calc(var(--phone-min-width) / 1.3973 + var(--stage-air));
+  /* Fill the grid area outright. The inherited `margin:0 auto` would make the
+     stage shrink-wrap the phone, and the phone is measured from the stage --
+     that circle is what let the body drift off its ratio. */
+  align-self:stretch;justify-self:stretch;width:auto;max-width:none;margin:0;
+}
+.phone{width:var(--phone-width);height:var(--phone-height)}
+
+@media(max-width:600px){
+  :root{--phone-min-width:260px;--stage-air:36px}
+}
+
+/* Short phones: the chrome gives up height before the object does. */
+@media(max-width:600px) and (max-height:740px){
+  :root{--phone-min-width:236px;--stage-air:26px}
+  h1{font-size:42px}
+  .intro{margin-top:14px;padding-bottom:8px}
+  .masthead{padding-bottom:12px}
+  .view-controls{min-height:38px}
+  .reader-controls{min-height:94px}
+}
+
+/* Wide screens: the object takes the left field and the reading column the
+   right, so nothing the reader needs can fall below the fold. */
+@media(min-width:880px) and (min-height:560px){
+  :root{--phone-min-width:300px;--stage-air:48px}
+  .experience{
+    grid-template-columns:minmax(0,1fr) minmax(300px,368px);
+    grid-template-rows:auto minmax(24px,1fr) auto auto auto minmax(24px,1fr);
+    column-gap:clamp(28px,4.5vw,88px);
+  }
+  .masthead{grid-column:1/-1;grid-row:1}
+  .device-stage{grid-column:1;grid-row:2/7}
+  .intro{grid-column:2;grid-row:3;margin-top:0;padding-bottom:0}
+  /* The caption reads as the title's deck, which puts the reader-control
+     reserve at the foot of the column instead of leaving a hole mid-way. */
+  .closing-line{grid-column:2;grid-row:4;margin:12px 0 26px}
+  .interaction-panel{grid-column:2;grid-row:5;width:100%}
+  h1{font-size:clamp(48px,4.4vw,64px)}
+}
+
+/* The caption empties out while reading; hold its line so the column is still. */
+.closing-line{min-height:1.45em}
+
+/* The cue is a real control now, not a label describing a gesture that opens
+   nothing. Keep its lock-screen look, give it a button's hit area. */
+.lock-cue{
+  position:absolute;left:50%;transform:translateX(-50%);bottom:12px;
+  display:grid;place-items:center;
+  min-width:48px;min-height:48px;padding:0;border-radius:50%;
+  font-family:sans-serif;font-size:17px;line-height:1;color:#a293b5;
+}
+.lock-cue>span{margin:0;font-size:inherit;line-height:1}
+/* The year now carries the top of the composition on its own. */
+.lock-year{margin-top:46px}
+.lock-brand{bottom:74px}
+@media(max-width:600px){.lock-year{margin-top:42px}.lock-brand{bottom:62px}.lock-cue{bottom:8px}}
+.lock-cue:hover{color:#d8cbe8}
+.lock-cue:active{opacity:.7}
+.lock-cue:focus-visible{outline:1px solid #cbbcde;outline-offset:2px}
+
+/* Optical balance on the paper: the copy sits centred between the two rules
+   instead of being pushed up by two competing auto margins. */
+.message-card{display:grid;grid-template-rows:auto 1fr auto}
+.card-copy{margin:0;align-self:center}
+.paper-foot{margin-top:0}
+
+/* ---------------------------------------------------------------------------
+   The title is foil, not chrome. One calm base gradient carries the colour and
+   a single narrow band carries the shine, so it reads as light landing on a
+   surface instead of a seven-stop metal ramp with a hard black drop shadow.
+   It breathes on its own, and leans with the object it names.
+   --------------------------------------------------------------------------- */
+@property --shine{syntax:"<percentage>";inherits:false;initial-value:44%}
+
+.intro{padding-bottom:16px;perspective:820px}
+.intro h1{
+  letter-spacing:.09em;padding-left:.09em;
+  background-image:
+    linear-gradient(101deg,transparent calc(var(--shine) - 14%),#fffdfff5 var(--shine),transparent calc(var(--shine) + 14%)),
+    linear-gradient(177deg,#f6f1fa 3%,#d3c8e3 44%,#a294b6 73%,#cec3de 100%);
+  background-clip:text;-webkit-background-clip:text;color:transparent;
+  /* A lavender halo, not a shadow: the words give off light rather than cast it. */
+  text-shadow:0 0 22px #b9a8dd30,0 0 58px #7d61b820;
+  rotate:y var(--title-turn,0deg);
+  animation:title-drift 11s ease-in-out infinite,title-shine 7.5s linear infinite;
+  will-change:translate;
+}
+.intro h1 em{color:inherit}
+.intro .title-star{color:#cfc0e9;text-shadow:0 0 13px #b9a8dd6b;animation:star-breathe 5.5s ease-in-out infinite}
+
+@keyframes title-drift{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@keyframes title-shine{0%{--shine:-14%}58%,100%{--shine:120%}}
+@keyframes star-breathe{0%,100%{opacity:.6;scale:.94}50%{opacity:1;scale:1.07}}
+
+/* ---------------------------------------------------------------------------
+   Opening has a reward. Across the last third of the fold the field answers:
+   the starfield comes up, a second orbit appears, and a bloom grows behind the
+   object -- then a single pulse marks the moment it becomes readable.
+   --------------------------------------------------------------------------- */
+.stage-bloom{
+  position:absolute;width:min(720px,116%);aspect-ratio:1;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,#b9a8dd26 0%,#8d6fc716 34%,transparent 63%);
+  mix-blend-mode:screen;
+  opacity:calc(var(--open-glow,0) * .95);
+  transform:scale(calc(.84 + var(--open-glow,0) * .16));
+}
+.orbit-far{width:min(840px,152%);height:min(250px,46%);transform:rotate(13deg);border-color:#b9a8dd14;opacity:calc(var(--open-glow,0) * .8)}
+.ambient-orbit{border-color:rgba(185,168,221,calc(.045 + var(--open-glow,0) * .2))}
+.experience:before{opacity:calc(.62 + var(--open-glow,0) * .38)}
+
+/* On a large desktop the object should own the field it is given. */
+@media(min-width:1280px) and (min-height:780px){
+  :root{--phone-max-width:700px}
+}
+
+/* Shut: only the outward-facing surfaces are real to the pointer. */
+.phone.shut .inside{pointer-events:none}
+
+/* ---------------------------------------------------------------------------
+   The paper is a landscape page now that the body holds the real device ratio,
+   so it is set as one: shorter leading, tighter chrome, and a font size that
+   carries the per-card fit factor main.ts measures.
+   --------------------------------------------------------------------------- */
+.card-copy>p:first-child{font-size:calc(21px * var(--card-font-scale) * var(--card-fit,1));line-height:1.68}
+.signature{font-size:calc(15px * var(--card-fit,1));margin-top:14px}
+.card-copy{padding:12px 0}
+.paper-heading{padding-bottom:13px}
+.paper-foot{padding-top:13px}
+.message-card[data-dense=true] .card-copy>p:first-child{line-height:1.42}
+
+@media(max-width:600px){
+  .card-copy>p:first-child{font-size:calc(16px * var(--card-font-scale) * var(--card-fit,1));line-height:1.58}
+  .signature{font-size:calc(13px * var(--card-fit,1));margin-top:10px}
+  .card-copy{padding:8px 0}
+  .message-card{padding:18px 20px 15px}
+  .paper-heading{padding-bottom:9px}
+  .paper-foot{padding-top:9px}
+  .message-card[data-dense=true] .card-copy>p:first-child{line-height:1.38}
+}
+@media(max-width:350px){
+  .message-card{padding:15px 15px 12px}
+  .card-copy>p:first-child{font-size:calc(15px * var(--card-font-scale) * var(--card-fit,1))}
+}
+
+/* ---------------------------------------------------------------------------
+   Everything the body is made of scales with the body, not with the window.
+   One unit = 1% of the device height, so bezels, radii, the hinge and the lock
+   screen keep the same relationship to each other at 203px tall and at 501px.
+   --------------------------------------------------------------------------- */
+.phone{
+  --u:calc(var(--phone-height) / 100);
+  --body-radius:calc(var(--u) * 5.6);
+  --screen-inset:calc(var(--u) * 2.2);
+  --screen-radius:calc(var(--u) * 4);
+}
+.phone .face{border-radius:var(--body-radius)}
+.phone .inside-left{border-top-right-radius:calc(var(--u) * 1.8);border-bottom-right-radius:calc(var(--u) * 1.8)}
+.phone .inside-right{border-top-left-radius:calc(var(--u) * 1.8);border-bottom-left-radius:calc(var(--u) * 1.8)}
+.phone .edge{width:calc(var(--u) * 2);top:var(--body-radius);height:calc(100% - 2 * var(--body-radius))}
+.phone .half-left .edge{left:calc(var(--u) * -1)}
+.phone .half-right .edge{right:calc(var(--u) * -1)}
+.phone .edge-cap{height:calc(var(--u) * 2);left:var(--body-radius);right:var(--body-radius)}
+.phone .edge-top{top:calc(var(--u) * -1)}
+.phone .edge-bottom{bottom:calc(var(--u) * -1)}
+.phone .hinge{left:calc(50% - var(--u) * .8);width:calc(var(--u) * 1.6);border-radius:calc(var(--u) * 1.4);top:var(--body-radius);height:calc(100% - 2 * var(--body-radius))}
+
+/* Lock screen: proportional positions, so the composition is the same object
+   whether the device is rendered small or large. */
+.lock-screen{inset:calc(var(--u) * 1.4);border-radius:calc(var(--u) * 4.2)}
+.lock-year{position:absolute;top:7%;left:0;right:0;margin:0;text-align:center;line-height:1;font-size:calc(var(--u) * 20)}
+.lock-art{top:29%;height:37%;width:112%;left:-6%}
+.lock-brand{bottom:18%;left:0;right:0;font-size:max(11px,calc(var(--u) * 4.2));letter-spacing:.22em}
+.lock-brand>span{font-size:max(6px,calc(var(--u) * 1.6));letter-spacing:.14em;margin-top:.6em}
+/* The cue's box stays proportional so the composition is identical at every
+   render size; the touch target is a pseudo-element that grows to 44px over
+   the brand, which is not interactive and so cannot be stolen from. */
+.lock-cue{bottom:6%;min-width:0;min-height:0;width:calc(var(--u) * 9);height:calc(var(--u) * 7);font-size:max(13px,calc(var(--u) * 3.4))}
+.lock-cue:after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max(44px,100%);height:max(44px,100%)}
+.inner-year{font-size:calc(var(--u) * 9.6)}
+.inside p{font-size:max(9px,calc(var(--u) * 2.6))}
+.back-date{bottom:7%;font-size:max(6px,calc(var(--u) * 1.8))}
+
+/* The reading surfaces sit on the same unit. */
+.message-screen{inset:var(--screen-inset) 0}
+.message-left{left:var(--screen-inset);border-radius:var(--screen-radius) 0 0 var(--screen-radius)}
+.message-right{right:var(--screen-inset);border-radius:0 var(--screen-radius) var(--screen-radius) 0}
+.message-card{width:calc(var(--phone-width) - 2 * var(--screen-inset))}
+.message-flat{inset:var(--screen-inset);border-radius:var(--screen-radius)}
+.message-flat .message-card{width:100%}

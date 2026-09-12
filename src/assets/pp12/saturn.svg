@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-62 -40 224 180"><defs><radialGradient id="planet" cx=".38" cy=".18" r=".85"><stop stop-color="#48404f"/><stop offset=".4" stop-color="#232028"/><stop offset=".8" stop-color="#0a090d"/></radialGradient><radialGradient id="rim" cx=".82" cy=".22"><stop stop-color="#8c6ec8" stop-opacity=".26"/><stop offset="1" stop-color="#8c6ec8" stop-opacity="0"/></radialGradient></defs>
+        <defs>
+          <!-- 封面環帶：左端隱沒、右端亮起沒入紫霧 -->
+          <linearGradient id="ringG" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#cfc4e0" stop-opacity=".06"/>
+            <stop offset=".5" stop-color="#cfc4e0" stop-opacity=".2"/>
+            <stop offset="1" stop-color="#d8cdec" stop-opacity=".6"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(56 62) rotate(-23) translate(-56 -62)">
+          <path d="M-14,62 A70,14 0 0 1 126,62" fill="none" stroke="url(#ringG)" stroke-width=".3"/>
+          <path d="M-8,62 A64,12.8 0 0 1 120,62" fill="none" stroke="url(#ringG)" stroke-width=".18" opacity=".9"/>
+          <path d="M-2,62 A58,11.6 0 0 1 114,62" fill="none" stroke="url(#ringG)" stroke-width="1.7" opacity=".13"/>
+          <path d="M4,62 A52,10.4 0 0 1 108,62" fill="none" stroke="url(#ringG)" stroke-width=".2" opacity=".85"/>
+          <path d="M10,62 A46,9.2 0 0 1 102,62" fill="none" stroke="url(#ringG)" stroke-width=".65" opacity=".22"/>
+        </g>
+      <circle cx="50" cy="50" r="33.78" fill="url(#planet)"/><circle cx="50" cy="50" r="33.78" fill="url(#rim)"/>
+        <defs>
+          <linearGradient id="ringG2" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#cfc4e0" stop-opacity=".06"/>
+            <stop offset=".5" stop-color="#cfc4e0" stop-opacity=".2"/>
+            <stop offset="1" stop-color="#d8cdec" stop-opacity=".6"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(56 62) rotate(-23) translate(-56 -62)">
+          <path d="M-14,62 A70,14 0 0 0 126,62" fill="none" stroke="url(#ringG2)" stroke-width=".3"/>
+          <path d="M-8,62 A64,12.8 0 0 0 120,62" fill="none" stroke="url(#ringG2)" stroke-width=".18" opacity=".9"/>
+          <path d="M-2,62 A58,11.6 0 0 0 114,62" fill="none" stroke="url(#ringG2)" stroke-width="1.7" opacity=".13"/>
+          <path d="M4,62 A52,10.4 0 0 0 108,62" fill="none" stroke="url(#ringG2)" stroke-width=".2" opacity=".85"/>
+          <path d="M10,62 A46,9.2 0 0 0 102,62" fill="none" stroke="url(#ringG2)" stroke-width=".65" opacity=".22"/>
+        </g>
+      <svg x="35.8" y="38" width="28.4" height="30.7" viewBox="0 0 760 820">
+        <defs>
+          <radialGradient id="gStar" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#efe9f8" stop-opacity=".14"/>
+            <stop offset=".6" stop-color="#cbb8ec" stop-opacity=".05"/>
+            <stop offset="1" stop-color="#cbb8ec" stop-opacity="0"/>
+          </radialGradient>
+          <!-- 「1」筆桿：往下漸隱沒入星光 -->
+          <linearGradient id="gStem" gradientUnits="userSpaceOnUse" x1="267" y1="0" x2="267" y2="290">
+            <stop offset="0" stop-color="#d9d2e6" stop-opacity=".55"/>
+            <stop offset=".7" stop-color="#d9d2e6" stop-opacity=".4"/>
+            <stop offset="1" stop-color="#d9d2e6" stop-opacity="0"/>
+          </linearGradient>
+          <!-- 星芒左下光尾：漸隱 -->
+          <linearGradient id="gTrail" gradientUnits="userSpaceOnUse" x1="420" y1="320" x2="142" y2="595">
+            <stop offset="0" stop-color="#e9e3f2" stop-opacity=".9"/>
+            <stop offset=".3" stop-color="#e9e3f2" stop-opacity=".45"/>
+            <stop offset="1" stop-color="#e9e3f2" stop-opacity="0"/>
+          </linearGradient>
+          <!-- 「2」底橫線：右端較亮再收尾。
+               起始不透明度不可再低於 .5：手機上整組筆畫不到 1 個實體像素，
+               低於此值時抗鋸齒後的覆蓋率會低到整條線看不見（需縮放才浮現）。 -->
+          <linearGradient id="gBase" gradientUnits="userSpaceOnUse" x1="413" y1="598" x2="700" y2="598">
+            <stop offset="0" stop-color="#d9d2e6" stop-opacity=".5"/>
+            <stop offset=".75" stop-color="#e5dff0" stop-opacity=".75"/>
+            <stop offset="1" stop-color="#e5dff0" stop-opacity=".22"/>
+          </linearGradient>
+        </defs>
+        <!-- 星芒後方光暈 -->
+        <circle class="star-glow" cx="391" cy="343" r="100" fill="url(#gStar)"/>
+        <!-- 「1」：旗尾＋垂直筆桿（暗） -->
+        <g fill="none" stroke-width="3">
+          <path d="M262,2 L176,82" stroke="#d9d2e6" stroke-opacity=".55"/>
+          <path d="M267.5,2 L267.5,285" stroke="url(#gStem)"/>
+        </g>
+        <!-- 「2」：頂弧→右弧→長斜筆→底橫線（完整字形，略暗） -->
+        <g fill="none" stroke-width="3">
+          <path d="M380,206 C424,188 478,186 524,206 C575,229 610,280 610,348 C610,418 588,468 548,510 C505,551 458,568 413,597" stroke="#ddd6ea" stroke-opacity=".6"/>
+          <path d="M413,598 L700,598" stroke="url(#gBase)"/>
+        </g>
+        <!-- 星芒：縱、橫、斜光＋往左下延伸的光尾 -->
+        <g fill="none" stroke-width="3">
+          <path d="M391,293 L391,403" stroke="#e9e3f2" stroke-opacity=".85"/>
+          <path d="M327,343 L456,343" stroke="#e9e3f2" stroke-opacity=".85"/>
+          <path d="M363,318 L423,380" stroke="#e9e3f2" stroke-opacity=".8"/>
+          <path d="M420,320 L142,595" stroke="url(#gTrail)"/>
+        </g>
+        <circle class="star-core" cx="391" cy="343" r="4" fill="#f4f0fa"/>
+      </svg></svg>
