@@ -85,6 +85,10 @@ const render = () => {
   // the standby screen spills its light into the room.
   phone.style.setProperty('--leaf-lift', String(Math.max(0, -Math.cos(foldAngle * Math.PI / 180))));
   phone.style.setProperty('--closed-glow', String(clamp((30 - renderedFold) / 30, 0, 1)));
+  // Sealed shut, the body shows one silhouette: the inner face behind the
+  // cover and the bright edge of the hinge are both inside the sandwich, and
+  // must not draw their own outline past it.
+  phone.style.setProperty('--shut-seal', String(clamp((6 - renderedFold) / 6, 0, 1)));
   experience.style.setProperty('--title-turn', `${clamp(renderedRotation * .05, -7, 7)}deg`);
   messageMode = renderedFold >= 98;
   const readable = isReadable();

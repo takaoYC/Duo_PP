@@ -333,3 +333,8 @@
 }
 
 .lock-screen:before{opacity:.3}
+
+/* Sealed shut: one outline, no second leaf showing round the corners and no
+   lit hinge running down the spine. Both return as soon as the fold opens. */
+.phone .inside-right{opacity:calc(1 - var(--shut-seal,0))}
+.phone .hinge{opacity:calc(1 - .92 * var(--shut-seal,0))}
