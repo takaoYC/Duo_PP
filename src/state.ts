@@ -12,7 +12,7 @@ export function savePreference(key: string, value: string) {
 const theme = read('duo-pp:theme');
 const size = read('duo-pp:font');
 export const state = {
-  foldProgress: 4,
+  foldProgress: 0,
   phoneRotation: -12,
   phoneTilt: 3,
   currentCard: 0,

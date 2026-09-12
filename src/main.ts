@@ -10,7 +10,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     ${phoneMarkup()}
     <div class="interaction-panel">
       <div class="view-controls" role="group" aria-label="手機觀看角度"><button type="button" id="view-front" aria-pressed="true">正面</button><span aria-hidden="true">／</span><button type="button" id="view-back" aria-pressed="false">背面</button><button type="button" id="inspect" aria-pressed="false" aria-label="切換整支手機自由旋轉模式">360°</button><span class="drag-hint">拖曳機身 · 轉動</span></div>
-      <div class="fold-control"><div class="fold-label"><label for="fold">展開這十二年</label><output id="fold-value" for="fold">4%</output></div><input id="fold" type="range" min="0" max="100" step="1" value="4" aria-label="手機開合程度" aria-valuetext="4%，微微展開" /><div class="fold-endpoints" aria-hidden="true"><span>2014 <i>開始</i></span><span>2026 <i>星光</i></span></div></div>
+      <div class="fold-control"><div class="fold-label"><label for="fold">展開這十二年</label></div><input id="fold" type="range" min="0" max="100" step="1" value="0" aria-label="手機開合程度" aria-valuetext="0%，完全闔起" /><div class="fold-endpoints" aria-hidden="true"><span>2014 <i>開始</i></span><span>2026 <i>星光</i></span></div></div>
       ${readerMarkup()}
     </div>
     <p class="closing-line" id="chapter-caption">從一顆星，開始。</p>
@@ -81,6 +81,10 @@ const render = () => {
   // The last third of the opening lights the field: stars, orbits and a bloom
   // behind the object all answer to how far it has come.
   experience.style.setProperty('--open-glow', String(clamp((renderedFold - 62) / 38, 0, 1)));
+  // Shut, the leaf rests ON the body rather than in the same plane as it, and
+  // the standby screen spills its light into the room.
+  phone.style.setProperty('--leaf-lift', String(Math.max(0, -Math.cos(foldAngle * Math.PI / 180))));
+  phone.style.setProperty('--closed-glow', String(clamp((30 - renderedFold) / 30, 0, 1)));
   experience.style.setProperty('--title-turn', `${clamp(renderedRotation * .05, -7, 7)}deg`);
   messageMode = renderedFold >= 98;
   const readable = isReadable();
@@ -113,7 +117,6 @@ const rotate = (angle: number, tilt = 0) => { state.phoneRotation = angle; state
 setupPhone(phone, rotate, () => state.phoneRotation, () => state.phoneTilt, () => isReadable() && !inspecting, reader.change);
 const applyFold = () => {
   state.foldProgress = Number(fold.value);
-  document.querySelector('#fold-value')!.textContent = `${fold.value}%`;
   fold.setAttribute('aria-valuetext', `${fold.value}%，${state.foldProgress >= 98 ? '完全展開，可以閱讀留言' : state.foldProgress === 0 ? '完全闔起' : '展開中'}`);
   fold.style.setProperty('--range-fill', `${fold.value}%`);
   schedule();

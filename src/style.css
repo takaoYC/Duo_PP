@@ -289,3 +289,47 @@
 .message-card{width:calc(var(--phone-width) - 2 * var(--screen-inset))}
 .message-flat{inset:var(--screen-inset);border-radius:var(--screen-radius)}
 .message-flat .message-card{width:100%}
+
+/* ---------------------------------------------------------------------------
+   Shut, the left leaf rests ON the body, not in the same plane as it. Without
+   the lift the cover and the right inner face are exactly coplanar at 0%, and
+   the inner face wins on paint order -- which is why the standby screen was
+   not what you saw when the phone was closed.
+   --------------------------------------------------------------------------- */
+.phone .inside{transform:translateZ(var(--u))}
+.phone .back,.phone .cover{transform:rotateY(180deg) translateZ(var(--u))}
+.phone .hinge{transform:translateZ(calc(var(--u) * .2))}
+.half-left{transform:translateZ(calc(var(--u) * 2.4 * var(--leaf-lift,0))) rotateY(var(--fold-angle))}
+
+/* ---------------------------------------------------------------------------
+   The standby screen is on: it lights its own surface and spills onto the
+   space around the body, strongest shut and gone once the phone is opening.
+   --------------------------------------------------------------------------- */
+.cover{
+  box-shadow:
+    inset 0 0 0 calc(var(--u) * .6) #2a282c,
+    inset 0 0 0 calc(var(--u) * 1) #08080a,
+    0 0 calc(var(--u) * 9) calc(var(--u) * .5) rgba(124,92,186,calc(.2 * var(--closed-glow,0))),
+    0 0 calc(var(--u) * 22) calc(var(--u) * 2) rgba(92,66,146,calc(.12 * var(--closed-glow,0)));
+}
+.lock-screen{background:radial-gradient(ellipse at 50% 62%,#7c5cbe24,transparent 58%),radial-gradient(ellipse at 105% 53%,#65489e55,transparent 70%),#060509}
+.lock-screen:after{
+  background:
+    radial-gradient(ellipse at 50% 57%,#8d6bd926,transparent 55%),
+    linear-gradient(125deg,#fff0 25%,#cdbfe70d 47%,#fff0 65%);
+  mix-blend-mode:screen;
+  animation:screen-breathe 6.5s ease-in-out infinite;
+}
+@keyframes screen-breathe{0%,100%{opacity:.74}50%{opacity:1}}
+.lock-art img{filter:brightness(1.45) drop-shadow(0 0 calc(var(--u) * 2) #b9a8dd33)}
+.lock-year{text-shadow:0 0 calc(var(--u) * 4.5) #cbb8f547}
+.lock-brand{text-shadow:0 0 calc(var(--u) * 3) #c4b2ea3d}
+
+/* Keep the reading column clear of the window edge on wide screens. The whole
+   field gets the margin, so the masthead rule and the slider still end on the
+   same line -- a column inset on its own reads as a mistake, not as space. */
+@media(min-width:880px) and (min-height:560px){
+  .experience{padding-left:max(48px,3.5vw);padding-right:max(48px,3.5vw)}
+}
+
+.lock-screen:before{opacity:.3}
