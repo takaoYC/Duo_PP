@@ -338,3 +338,8 @@
    lit hinge running down the spine. Both return as soon as the fold opens. */
 .phone .inside-right{opacity:calc(1 - var(--shut-seal,0))}
 .phone .hinge{opacity:calc(1 - .92 * var(--shut-seal,0))}
+
+/* "PP" is set apart by colour, not by emphasis. <em> is italic by default, and
+   only fonts without a real italic (desktop, via the local Editorial face) hid
+   that; iOS falls back to Baskerville, which has one, and slanted the name. */
+.intro h1 em{font-style:normal}

@@ -2,6 +2,7 @@ import './style.css';
 import { phoneMarkup, setupPhone } from './components/phone';
 import { readerMarkup, setupReader } from './components/reader';
 import { state, messageOpacity, clamp } from './state';
+import { cards } from './data/cards';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <main class="experience">
@@ -10,7 +11,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     ${phoneMarkup()}
     <div class="interaction-panel">
       <div class="view-controls" role="group" aria-label="手機觀看角度"><button type="button" id="view-front" aria-pressed="true">正面</button><span aria-hidden="true">／</span><button type="button" id="view-back" aria-pressed="false">背面</button><button type="button" id="inspect" aria-pressed="false" aria-label="切換整支手機自由旋轉模式">360°</button><span class="drag-hint">拖曳機身 · 轉動</span></div>
-      <div class="fold-control"><div class="fold-label"><label for="fold">展開這十二年</label></div><input id="fold" type="range" min="0" max="100" step="1" value="0" aria-label="手機開合程度" aria-valuetext="0%，完全闔起" /><div class="fold-endpoints" aria-hidden="true"><span>2014 <i>開始</i></span><span>2026 <i>星光</i></span></div></div>
+      <div class="fold-control"><div class="fold-label"><label for="fold">展開查看觀眾留言</label></div><input id="fold" type="range" min="0" max="100" step="1" value="0" aria-label="手機開合程度" aria-valuetext="0%，完全闔起" /><div class="fold-endpoints" aria-hidden="true"><span>2014</span><span>${cards.length}<i>則留言</i></span></div></div>
       ${readerMarkup()}
     </div>
     <p class="closing-line" id="chapter-caption">從一顆星，開始。</p>
