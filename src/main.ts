@@ -1,12 +1,13 @@
 import './style.css';
 import { phoneMarkup, setupPhone } from './components/phone';
 import { readerMarkup, setupReader } from './components/reader';
+import { publicationMarkup, setupPublication } from './components/publication';
 import { state, messageOpacity, clamp } from './state';
 import { cards } from './data/cards';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <main class="experience">
-    <header class="masthead"><span>PP YAO</span><span>2014から</span></header>
+    <header class="masthead"><span>PP YAO</span><button type="button" class="masthead-link" id="open-publication" aria-haspopup="dialog">紀念刊物 <span aria-hidden="true">→</span></button></header>
     <div class="intro"><h1>Duo <em>PP</em><span class="title-star" aria-hidden="true">✧</span></h1></div>
     ${phoneMarkup()}
     <div class="interaction-panel">
@@ -15,7 +16,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       ${readerMarkup()}
     </div>
     <p class="closing-line" id="chapter-caption">從一顆星，開始。</p>
-  </main>`;
+  </main>
+  ${publicationMarkup()}`;
 
 // Split one synchronized card across the two physical screens.
 const originalScreen = document.querySelector<HTMLElement>('#message-screen')!;
@@ -58,7 +60,9 @@ let renderedFold = state.foldProgress, renderedRotation = state.phoneRotation, r
 let messageMode = false;
 let inspecting = false;
 const isReadable = () => messageMode && Math.cos(renderedRotation * Math.PI / 180) * Math.cos(renderedTilt * Math.PI / 180) > .3;
-const reader = setupReader(reducedMotion, isReadable);
+const publication = setupPublication(document.querySelector<HTMLElement>('#open-publication')!, document.querySelector<HTMLElement>('.experience')!);
+// While the publication is open its arrow keys turn chapters, not message cards.
+const reader = setupReader(reducedMotion, () => isReadable() && !publication.isOpen());
 const render = () => {
   const ease = reducedMotion.matches ? 1 : .2;
   renderedFold += (state.foldProgress - renderedFold) * ease;
