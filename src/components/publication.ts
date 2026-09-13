@@ -82,7 +82,13 @@ export function setupPublication(opener: HTMLElement, background: HTMLElement) {
   const links = [...toc.querySelectorAll<HTMLAnchorElement>('a')];
 
   const setToc = (open: boolean) => { root.classList.toggle('toc-open', open); tocToggle.setAttribute('aria-expanded', String(open)); };
-  const setSettings = (open: boolean) => { settings.hidden = !open; settingsToggle.setAttribute('aria-expanded', String(open)); };
+  const setSettings = (open: boolean) => {
+    // Hiding the panel would drop focus to <body> and take the keyboard out of
+    // the reader; hand it back to the button that opened the panel.
+    if (!open && settings.contains(document.activeElement)) settingsToggle.focus();
+    settings.hidden = !open;
+    settingsToggle.setAttribute('aria-expanded', String(open));
+  };
 
   const applyPrefs = () => {
     root.dataset.tone = prefs.tone;
@@ -165,7 +171,9 @@ export function setupPublication(opener: HTMLElement, background: HTMLElement) {
     const target = event.target as HTMLElement;
     if (!settings.hidden && !target.closest('#pub-settings, #pub-settings-toggle')) setSettings(false);
   });
-  root.addEventListener('keydown', event => {
+  // Listen at the document: a key must still work if focus has slipped out of the dialog.
+  document.addEventListener('keydown', event => {
+    if (!isOpen() || event.defaultPrevented) return;
     if (event.key === 'Escape') {
       event.preventDefault();
       if (!settings.hidden) setSettings(false);

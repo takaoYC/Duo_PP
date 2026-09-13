@@ -146,6 +146,10 @@ document.querySelector('#view-front')!.addEventListener('click', () => {
 document.querySelector('#view-back')!.addEventListener('click', () => rotate(180));
 reducedMotion.addEventListener('change', schedule);
 new ResizeObserver(() => { fitDevice(); reader.refit(); }).observe(stage);
+// The web font arrives after first paint and sets wider than the fallback, so
+// fit the card again once it has loaded rather than trusting the first measure.
+document.fonts?.ready.then(() => reader.refit());
+document.fonts?.addEventListener('loadingdone', () => reader.refit());
 addEventListener('resize', fitDevice);
 fitDevice();
 render();
